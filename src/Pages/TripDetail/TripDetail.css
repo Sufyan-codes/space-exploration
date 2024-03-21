@@ -1,0 +1,136 @@
+.van-detail-container {
+    padding: 27px;
+    color: white;
+    margin-top: 7rem;
+}
+
+.van-detail-container .back-button {
+    text-decoration: none;
+}
+
+
+.van-detail-container .back-button span {
+    text-decoration: underline;
+}
+
+.van-detail {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.van-detail-img {
+    width: 500px;
+    height: 350px;
+}
+
+.van-detail img {
+    border-radius: 5px;
+    margin-block: 47px;
+}
+
+.van-detail h2 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.van-detail > i {
+    align-self: flex-start;
+}
+
+.van-detail .van-price {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.van-detail .van-price span {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.van-detail .link-button {
+    border: none;
+    width: 100%;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,.05);
+    color: white;
+    font-size: 1.125rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    background-color: rgba(0,0,0,.75);
+    transition: .3s;
+}
+
+.i {
+    background-color: rgba(255,255,255,.05);
+}
+
+.text--container {
+    width: 30rem;
+    padding-top: 4rem;
+}
+
+.article-data {
+    margin-top: 2rem;
+}
+
+@media (min-width: 400px) {
+    .article-data-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .article-data {
+        font-size: .75rem;
+    }
+
+    .article-category {
+        right: 2rem;
+        font-size: .75rem;
+    }
+
+    .title {
+        font-size: 1.25rem;
+    }
+
+    .van-type {
+        height: 34px;
+        margin: .4rem;
+        padding: 4px 20px;
+        font-style: normal;
+    }
+    
+}
+@media (min-width: 300px) {
+    .van-detail {
+       display: flex;
+       flex-direction: column;
+    }
+   }
+@media (min-width: 400px) {
+    .van-detail {
+       display: flex;
+       flex-direction: column;
+    }
+   }
+@media (min-width: 550px) {
+   
+}
+
+@media(min-width: 650px) {
+   
+}
+
+@media(min-width: 900px) {
+    .van-detail {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
