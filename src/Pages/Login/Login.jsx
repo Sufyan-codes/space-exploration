@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Login.css'
+import {motion} from "framer-motion"
 
 export default function Login() {
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
@@ -21,7 +22,14 @@ export default function Login() {
     
     <div className="login-container container">
         
- <div className="login--text">
+ <motion.div
+ initial={{y: "2rem" , opacity: 0}}
+ animate={{y: 0, opacity: 1}}
+ transition={{
+   duration: 3,
+   type:"spring"
+ }}
+ className="login--text">
  
     <form onSubmit={handleSubmit} className="login-form ff-sans-cond uppercase text-white letter-spacing-2">
     <h1 className='ff-sans-cond uppercase text-white letter-spacing-2'>Sign in to Continue</h1>
@@ -42,11 +50,18 @@ export default function Login() {
         <button className='ff-sans-cond uppercase text-white letter-spacing-2'>Log in</button>
     </form>
     <h2 className='ff-sans-cond  text-white letter-spacing-2'>Don`t have an account? <Link className='signup' to='/signup'>Sign up</Link></h2>
- </div>
+ </motion.div>
 
- <div className="login--image">
-    <img src="/src/assets/mars.jpg" alt="" />
- </div>
+ <motion.div
+ initial={{y: "-2rem" , opacity: 0}}
+ animate={{y: 0, opacity: 1}}
+ transition={{
+   duration: 3,
+   type:"spring"
+ }}
+ className="login--image">
+    <img src="https://img.freepik.com/premium-photo/futuristic-concept-colonization-planet-mars-future-civilization-mars-with-advanced-space-technology-generative-ai_210545-1754.jpg" alt="" />
+ </motion.div>
 </div>
   )
 }

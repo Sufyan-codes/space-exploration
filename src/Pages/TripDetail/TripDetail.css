@@ -1,129 +1,81 @@
-.van-detail-container {
-    padding: 27px;
-    color: white;
-    margin-top: 7rem;
+.width--size{
+    width: 95%;
+    margin: 0 auto;
 }
 
-.van-detail-container .back-button {
-    text-decoration: none;
+.tripdetail--container {
+    margin-top: 6rem;
 }
 
-
-.van-detail-container .back-button span {
+.back-button > span {
     text-decoration: underline;
 }
 
-.van-detail {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-}
-
-.van-detail-img {
-    width: 500px;
-    height: 350px;
-}
-
-.van-detail img {
-    border-radius: 5px;
-    margin-block: 47px;
-}
-
-.van-detail h2 {
+.detail--container {
     margin-top: 1rem;
-    font-size: 1.25rem;
-    margin-bottom: 10px;
 }
 
-.van-detail > i {
-    align-self: flex-start;
-}
-
-.van-detail .van-price {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-.van-detail .van-price span {
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-
-.van-detail .link-button {
-    border: none;
-    width: 100%;
-    height: 3rem;
+.detail--image {
     border-radius: 5px;
-    background-color: rgba(255,255,255,.05);
-    color: white;
-    font-size: 1.125rem;
-    margin-top: 2rem;
-    cursor: pointer;
 }
 
-.link-button:hover {
-    background-color: rgba(0,0,0,.75);
-    transition: .3s;
+.detail--text {
+    margin-top: 1rem;
 }
 
-.i {
-    background-color: rgba(255,255,255,.05);
+.types {
+    background: #131417;
+    padding: 7px 14px;
 }
 
 .text--container {
-    width: 30rem;
-    padding-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.article-data {
-    margin-top: 2rem;
+p {
+    font-size: .85rem;
 }
 
-@media (min-width: 400px) {
-    .article-data-container {
+.buttons {
+    background: #131417;
+    margin-top: 1rem;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        border: none;
         width: 100%;
-        margin: 0 auto;
-    }
-
-    .article-data {
-        font-size: .75rem;
-    }
-
-    .article-category {
-        right: 2rem;
-        font-size: .75rem;
-    }
-
-    .title {
-        font-size: 1.25rem;
-    }
-
-    .van-type {
-        height: 34px;
-        margin: .4rem;
-        padding: 4px 20px;
-        font-style: normal;
-    }
+        padding: .75rem 1.375rem;
+        color: initial;
+        font-weight: 700;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform .1s ease-in-out;
     
 }
-@media (min-width: 300px) {
-    .van-detail {
-       display: flex;
-       flex-direction: column;
-    }
-   }
-@media (min-width: 400px) {
-    .van-detail {
-       display: flex;
-       flex-direction: column;
-    }
-   }
-@media (min-width: 550px) {
-   
-}
+
+
 
 @media(min-width: 650px) {
-   
+   .detail--container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2rem;
+   }
+
+   .detail--image {
+    width: 550px;
+   }
+
+   .detail--text {
+    width: 500px;
+   }
+
+   .back-button {
+    padding-top: 12rem;
+   }
 }
 
 @media(min-width: 900px) {

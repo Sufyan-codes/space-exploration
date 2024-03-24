@@ -2,6 +2,7 @@ import React from "react"
 import { Link, useLoaderData, useSearchParams } from "react-router-dom"
 import { getVans } from "../../api"
 import './Trips.css'
+import {motion} from "framer-motion"
 
 export function loader() {
     return (
@@ -25,26 +26,32 @@ export default function Vans() {
         : vans
 
     const vanElements = displayedVans.map(van => (
-        <div key={van.id} className="featured-articles-container container d-grid container">
-            <Link className="article featured-article featured-article-1 ff-sans-cond  text-white letter-spacing-2"
+        <motion.div
+        initial={{y: "-2rem" , opacity: 0}}
+               animate={{y: 0, opacity: 1}}
+               transition={{
+                 duration: 3,
+                 type:"spring"
+               }}
+        key={van.id} className="Trips--container width--size">
+            <Link className="  ff-sans-cond width--size text-white letter-spacing-2"
                 to={van.id}
                 state={{
                     search: `?${searchParams.toString()}`,
                     type: typeFilter
                 }}
             > 
-                <img className="article-image" src={van.imageUrl} />
-                <span className="article-category">{van.type}</span>
-                <div className="article-data-container">
-                    <div className="article-data">
-                        <span>{van.name}</span>
-                        <span class="article-data-spacer"></span>
-                        <p>${van.price}<span> / Trip</span></p>
+                <img className="trips--image" src={van.imageUrl} />
+                <span className="type--class">{van.type}</span>
+                <div className="type--detail">
+                    <div className="type--text">
+                        <p className="trips--name">{van.name}</p>
+                        <p className="trips--price">${van.price}<span> / Trip</span></p>
                     </div>
 
                 </div>
             </Link>
-        </div>
+        </motion.div>
     ))
 
     function handleFilterChange(key, value) {
@@ -64,27 +71,41 @@ export default function Vans() {
     }
 
     return (
-        <div className="container">
-            <h1 className="title ff-sans-cond text-white letter-spacing-2">Explore our Travel options</h1>
-            <div className="van-list-filter-buttons">
+        <div className="tips--type width--size">
+            <motion.h1
+               initial={{y: "2rem" , opacity: 0}}
+               animate={{y: 0, opacity: 1}}
+               transition={{
+                 duration: 3,
+                 type:"spring"
+               }}
+            className=" title ff-sans-cond text-white letter-spacing-2">Explore our Travel options</motion.h1>
+            <motion.div
+            initial={{y: "2rem" , opacity: 0}}
+            animate={{y: 0, opacity: 1}}
+            transition={{
+              duration: 3,
+              type:"spring"
+            }}
+            className="type">
                 <button
                     onClick={() => handleFilterChange("type", "orbit")}
                     className={
-                        `van-type simple ff-sans-cond uppercase text-white letter-spacing-2
+                        `button ff-sans-cond uppercase text-white letter-spacing-2
                         ${typeFilter === "simple" ? "selected" : ""}`
                     }
                 >Orbit</button>
                 <button
                     onClick={() => handleFilterChange("type", "moon")}
                     className={
-                        `van-type luxury ff-sans-cond uppercase text-white letter-spacing-2
+                        `button luxury ff-sans-cond uppercase text-white letter-spacing-2
                         ${typeFilter === "luxury" ? "selected" : ""}`
                     }
                 >Moon</button>
                 <button
                     onClick={() => handleFilterChange("type", "mars")}
                     className={
-                        `van-type rugged ff-sans-cond uppercase text-white letter-spacing-2
+                        `button ff-sans-cond uppercase text-white letter-spacing-2
                         ${typeFilter === "rugged" ? "selected" : ""}`
                     }
                 >Mars</button>
@@ -92,12 +113,12 @@ export default function Vans() {
                 {typeFilter ? (
                     <button
                         onClick={() => handleFilterChange("type", null)}
-                        className="van-type clear-filters ff-sans-cond uppercase text-white letter-spacing-2"
+                        className="button clear-filters ff-sans-cond uppercase text-white letter-spacing-2"
                     >Clear filter</button>
                 ) : null}
 
-            </div>
-            <div className="container">
+            </motion.div>
+            <div className="elements--container">
                 {vanElements}
             </div>
         </div>

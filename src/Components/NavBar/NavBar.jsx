@@ -9,7 +9,7 @@ export default function NavBar() {
   return (
     <nav className='primary-header flex'>
       <div>
-        <Link to='/'><img src="./src/assets/logo.svg" alt="" className="logo" /></Link>
+        <Link to='/'><i className="ri-copper-coin-line logo"></i></Link>
 
       </div>
 
@@ -24,7 +24,7 @@ export default function NavBar() {
         <NavLink to='/login' className='ff-sans-cond uppercase text-white letter-spacing-2'>Login</NavLink>
       </div>
       <button className="mobile-menue-icon" onClick={() => setMobile(!Mobile)}>
-                {Mobile ?  <img className='icon-close' src='/src/assets/icon-close.svg' /> : <img src='/src/assets/icon-hamburger.svg' /> }
+                {Mobile ?  <div><i className='ri-close-line close-menu-icon close--menu'></i></div> : <div><i className='ri-menu-3-line open-menu-icon open--menu'></i></div> }
 
             </button>
     </nav>
